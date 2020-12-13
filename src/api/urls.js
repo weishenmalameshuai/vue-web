@@ -1,3 +1,4 @@
 export default {
-  baidu:"www.baidu.com"
+  login:'baseLogin/user/login',
+  userInfo:'baseLogin/user/info'
 }

@@ -1,19 +1,19 @@
-import { MessageBox,Message } from 'element-ui'
-import { get, post } from '@/api/request'
+import {MessageBox, Message} from 'element-ui'
+import {get, post} from '@/api/request'
 
 /*
   全局常用方法
  */
 
-window.get=function (url,query,configs) {
-return get(url,query,configs)
+window.get = function (url, query, configs) {
+  return get(url, query, configs)
 }
 
-window.post=function (url,data,configs) {
-  return post(url,data,configs)
+window.post = function (url, data, configs) {
+  return post(url, data, configs)
 }
 
-window.se = function(mes) {
+window.se = function (mes) {
   if (!mes) {
     mes = "操作失败";
   }
@@ -35,7 +35,7 @@ window.sw = function (mes) {
   })
 }
 
-window.ss = function(mes) {
+window.ss = function (mes) {
   if (!mes) {
     mes = "保存成功";
   }
@@ -46,7 +46,7 @@ window.ss = function(mes) {
   })
 }
 
-window.sc = function(s, mes, e) {
+window.sc = function (s, mes, e) {
   if (!mes) {
     mes = "此操作将删除数据, 是否继续?";
   }

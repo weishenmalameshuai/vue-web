@@ -8,7 +8,7 @@ export function post(url, data = {}, configs) {
   return joinParams(url, data, configs, 'post')
 }
 
-export function post(url, query = {}, configs) {
+export function get(url, query = {}, configs) {
   return joinParams(url, query, configs, 'get')
 }
 
