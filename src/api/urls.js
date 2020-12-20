@@ -1,4 +1,4 @@
 export default {
-  login:'baseLogin/user/login',
-  userInfo:'baseLogin/user/info'
+  login: 'baseLogin/user/login',
+  userInfo: 'baseLogin/user/info'
 }

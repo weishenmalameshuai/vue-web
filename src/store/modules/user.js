@@ -1,7 +1,8 @@
+// eslint-disable-next-line no-unused-vars
 import { login, logout, getInfo } from '@/api/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
+// eslint-disable-next-line no-unused-vars
 import router, { resetRouter } from '@/router'
-
 
 const state = {
   token: getToken(),
@@ -41,9 +42,9 @@ const mutations = {
 
 const actions = {
   // store 设置登录后信息
-  setLoginInfo({commit}, data) {
+  setLoginInfo({ commit }, data) {
     return new Promise(resolve => {
-      if(data.token){
+      if (data.token) {
         commit('SET_TOKEN', data.token)
         setToken(data.token)
       }
@@ -54,14 +55,15 @@ const actions = {
   login({ commit, dispatch }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
-      let obj = {
+      const obj = {
         username: username.trim(),
-        password: password,
+        password: password
       }
-      post('login',obj).then(response => {
+      // eslint-disable-next-line no-undef
+      post('login', obj).then(response => {
         if (response.data.token) {
           const data = response.data
-            dispatch('setLoginInfo',data).then(v=>resolve(data))
+          dispatch('setLoginInfo', data).then(v => resolve(data))
         } else {
           reject(response.data)
         }
@@ -74,6 +76,7 @@ const actions = {
   // 获取用户信息
   GetInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
+      // eslint-disable-next-line no-undef
       get('userInfo').then(response => {
         const data = response.data
         if (data.roles && data.roles.length > 0) { // 验证返回的roles是否是一个非空数组
@@ -92,10 +95,10 @@ const actions = {
   LogOut({ commit, state }) {
     return new Promise((resolve, reject) => {
       // logout(state.token).then(() => {
-        commit('SET_TOKEN', '')
-        commit('SET_ROLES', [])
-        removeToken()
-        resolve()
+      commit('SET_TOKEN', '')
+      commit('SET_ROLES', [])
+      removeToken()
+      resolve()
       // }).catch(error => {
       //   reject(error)
       // })

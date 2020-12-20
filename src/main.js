@@ -15,6 +15,8 @@ import store from './store'
 import '@/icons' // icon
 import '@/permission' // permission control
 import './globalFn' // 全局绑定函数
+// 引入avue
+import './plugins/avue'
 
 Vue.use(ElementUI, { locale })
 
